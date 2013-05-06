@@ -12,8 +12,9 @@ class rsyslog {
             notify => Service[ 'rsyslog' ],
         }
         package { 'rsyslog5' :
-            ensure => present,
-            notify => Service[ 'rsyslog' ],
+            ensure  => present,
+            notify  => Service[ 'rsyslog' ],
+            require => Package[ 'rsyslog' ],
         }
     }
 
