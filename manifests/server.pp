@@ -11,7 +11,7 @@ class rsyslog::server inherits rsyslog {
         notify  => Service[ 'rsyslog' ],
     }
 
-    include firewall
+    include myfirewall
 
     firewall { '100 rsyslog' :
           chain  => 'INPUT',
