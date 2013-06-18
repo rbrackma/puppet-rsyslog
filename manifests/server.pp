@@ -13,7 +13,7 @@ class rsyslog::server inherits rsyslog {
 
     include myfirewall
 
-    firewall { '100 rsyslog' :
+    firewall { '190 rsyslog' :
           chain  => 'INPUT',
           proto  => 'tcp',
           state  => 'NEW',
