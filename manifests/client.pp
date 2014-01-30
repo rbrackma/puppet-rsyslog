@@ -1,7 +1,7 @@
 # rsyslog client sending to remote rsyslog server with TCP
 
-class rsyslog::client (
-    $logserver = 'el6a.labolinux.fr' ) inherits rsyslog {
+class rsyslog::client inherits rsyslog {
+    include rsyslog::params
 
     file { '/etc/rsyslog.d/send.conf' :
         ensure  => present,
