@@ -7,14 +7,15 @@ class rsyslog {
         package { 'rsyslog' :
             ensure => absent,
         }
-        package { 'sysklogd' :
-            ensure => absent,
-            notify => Service[ 'rsyslog' ],
-        }
         package { 'rsyslog5' :
             ensure  => present,
             notify  => Service[ 'rsyslog' ],
             require => Package[ 'rsyslog' ],
+        }
+        package { 'sysklogd' :
+            ensure  => absent,
+            notify  => Service[ 'rsyslog' ],
+            require => Package[ 'rsyslog5' ],
         }
     }
 
